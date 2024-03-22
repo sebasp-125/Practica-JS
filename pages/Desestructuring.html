@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desestructuryn</title>
+</head>
+<body>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .form {
+            display: flex !important;
+            flex-direction: column;
+            width: 30%;
+            background-color: rgb(192, 202, 206);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin-top:20px ;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            border-radius: 2px;
+            border: none;
+            padding: 20px;
+        }
+
+        .Content-Paint {
+            display: flex;
+            background-color: red;
+justify-content: center; 
+align-items: center;
+
+}
+
+    </style>
+    <div class="form">
+        <h3>Destructuring Information</h3>
+        <label for="nombre">Ingrese su Nombre</label>
+        <input type="text" id="nombre" required><br>
+        <label for="apellido">Ingrese su Apellido</label>
+        <input type="text" id="apellido" required><br>
+        <label for="telefono">Ingrese su Telefono</label>
+        <input type="text" id="telefono" required><br>
+        <button onclick="capturarValores()">Enviar</button>
+    <div id="PaintDate">
+
+    </div>
+</div>
+
+    <script src="../scripts/Desestructuracion.js"></script>
+</body>
+</html>
