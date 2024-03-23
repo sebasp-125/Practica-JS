@@ -1,18 +1,25 @@
-function funcionar() {
-    let nombre = document.getElementById("nom").value
-    let apellido = document.getElementById("ape").value
-    let persona = {
-        Name: nombre,
-        Last: apellido
-    }
-    des(persona)
+let campos=[]
+function funcionar(){
+const nombre=document.getElementById("nom").value
+const apellido=document.getElementById("ape").value
+const celular=document.getElementById("cel").value
+const correo=document.getElementById("cor").value
+    if(nombre!==""&&apellido!==""&&celular!==""&&correo!==""){
+    let users= Math.random()
+    users= new construir(nombre,apellido,celular,correo)
+    campos.push(users)
+    ver(campos)
+}else{console.log("Complete todos los campos")}
 }
-function des(persona) {
-    let div = document.getElementById("divisito")
-    let inyect
-    let { Name,Last } = persona
-    console.log(Name, Last)
-    inyect = `<h1>${Name}</h1> <br>
-            <h2>${Last}</h2>`
-    div.innerHTML = inyect
+
+function construir(nombre,apellido,celular,correo){
+    this.nombre=nombre
+    this.apellido=apellido
+    this.celular=celular
+    this.correo=correo
+}
+
+function ver(campos){
+
+  console.log(campos)
 }
