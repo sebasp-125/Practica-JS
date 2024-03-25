@@ -1,43 +1,43 @@
+// Creamos un objeto para manejar la lógica de usuarios
+const UserHandler = {
+    users: [],
 
-let UserRegistrados = []
-console.log(UserRegistrados);
+    registerUser: function(nombre, password) {
+        if (nombre.trim() === "" || password.trim() === "") {
+            alert("Por favor ingresa tu nombre y contraseña");
+            return;
+        }
+        this.users.push({ nombre, password });
+        console.log("Usuario registrado con éxito:", { nombre, password });
+    },
 
-function Register(e) {
-    const nombre = document.getElementById("nombre").value;
-    const password = document.getElementById("password").value;
-    if (nombre.trim() === "" || password.trim() === "") {
-        alert("Please enter you name and password")
-        return;
-    }
-
-    function Usuario(nombre, password) {
-        this.nombre = nombre;
-        this.password = password;
-    }
-
-    const nuevoUsuario = new Usuario(nombre, password);
-    UserRegistrados.push(nuevoUsuario);
-    console.log("Usuario registrado con éxito:", nuevoUsuario);
-
-    document.getElementById("nombre").value = "";
-    document.getElementById("password").value = "";
-}
-
-function Login() {
-    const nombre = document.getElementById("nombreLogin").value;
-    const password = document.getElementById("passwordLogin").value;
-    console.log(nombre, password);
-    let usuarioEncontrado = false;
-
-    for (let i = 0; i < UserRegistrados.length; i++) {
-        if (nombre === UserRegistrados[i].nombre && password === UserRegistrados[i].password) {
-            usuarioEncontrado = true;
-            break;
+    loginUser: function(nombre, password) {
+        const userFound = this.users.some(user => user.nombre === nombre && user.password === password);
+        if (userFound) {
+            alert("Usuario registrado");
+        } else {
+            alert("Usuario no registrado");
         }
     }
-    if (usuarioEncontrado) {
-        alert("Usuario registrado")
-    } else if (usuarioEncontrado == false) {
-        alert("Usuario No Registrado")
-    }
+};
+
+function register() {
+    const nombre = document.getElementById("nombre").value;
+    const password = document.getElementById("password").value;
+    UserHandler.registerUser(nombre, password);
+    clearInputFields();
+}
+
+function login() {
+    const nombre = document.getElementById("nombreLogin").value;
+    const password = document.getElementById("passwordLogin").value;
+    UserHandler.loginUser(nombre, password);
+    clearInputFields();
+}
+
+function clearInputFields() {
+    document.getElementById("nombre").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("nombreLogin").value = "";
+    document.getElementById("passwordLogin").value = "";
 }
