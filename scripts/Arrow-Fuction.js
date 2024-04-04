@@ -1,27 +1,26 @@
+const greet = (name) => console.log("Hello", name);
+greet("Sebas");
 
-const Hello = (x) => console.log("Hola", x);
-Hello("Sebas")
+const add = (a, b) => a + b;
+console.log(add(1, 2));
 
-const sumar = (a, b) => a + b;
-console.log(sumar(1, 2));
-
-// Pasando valores al For || forEach.
+// Passing values to ForEach.
 try {
-    const number = [1, 2, 4]
-    number.forEach((x, index) => {
-        console.log(`El Elemento ${x} Esta en la posicion: ${index}`);
+    const numbers = [1, 2, 4];
+    numbers.forEach((x, index) => {
+        console.log(`The element ${x} is at position ${index}`);
     });
 } catch (error) {
-    console.log("Error al Completar el ForEach", error);
+    console.log("Error while completing forEach:", error);
 }
 
-// Sumando valores Array
+// Summing Array values
 try {
     const numbers = [1, 2, 4];
     for (let i = 0; i < numbers.length - 1; i++) {
         const sum = numbers[i] + numbers[i + 1];
-        console.log(`The element ${numbers[i]} position ${index} is summed with the next element ${numbers[i + 1]} and the result is ${sum}`);
+        console.log(`The element ${numbers[i]} at position ${i} is summed with the next element ${numbers[i + 1]} and the result is ${sum}`);
     }
 } catch (error) {
-    console.log("Error al hacer la suma del Array:", error);
+    console.log("Error while summing the array:", error);
 }

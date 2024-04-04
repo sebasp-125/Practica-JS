@@ -1,45 +1,29 @@
-// const numeros = [1 , 2 , 3]
-// const [one , two , three] = numeros
-// console.log(one, two, three);
+// let {name , lastName , phone} = person;
+// console.log(name , lastName , phone);
 
+function captureValues() {
+    let name = document.getElementById("name").value;
+    let lastName = document.getElementById("lastName").value;
+    let phone = document.getElementById("phone").value;
 
-// // Object
-// //Inputs capturar el valor de los input alamacenarlos en el objeto, para despues
-// //desestructurarlo y aplicarlo en H1 y/o H2
-// let persona = {
-//     nombre : "sebas" ,
-//     apellido : "perez",
-//     telefono : "3007058995",
-// }
+    let outputElement = document.getElementById("output");
+    let storage = {
+        ObjName : name, 
+        ObjLastName : lastName,
+        ObjPhone : phone
+    };
 
-// let {nombre , apellido , telefono} = persona;
-// console.log(nombre , apellido , telefono);
+    console.log(storage.ObjName);
+    let {ObjName , ObjLastName , ObjPhone} = storage;
 
-function capturarValores() {
-    let nombre = document.getElementById("nombre").value;
-    let apellido = document.getElementById("apellido").value;
-    let telefono = document.getElementById("telefono").value;
-
-    let PaintDate = document.getElementById("PaintDate")
-    let almacenamiento = {
-        ObjNombre : nombre, 
-        ObjApellido :apellido,
-        ObjeTelefono : telefono
-    }
-
-    console.log(almacenamiento.ObjNombre);
-    let {ObjNombre , ObjApellido , ObjeTelefono} = almacenamiento;
-
-
-    if (ObjNombre == '' || ObjApellido == '' || ObjeTelefono == '') {
-        alert("Debe de llenar todos los campos, Vuelva.")
+    if (ObjName == '' || ObjLastName == '' || ObjPhone == '') {
+        alert("You must fill in all fields. Please try again.");
         return;
     }
 
-    PaintDate.innerHTML = `
-    <h1>Tu nombre es: ${ObjNombre}</h1>
-    <h2>Y tu apellido es: ${ObjApellido}</h2>
-    <h4>Recuerda tu telefono: ${ObjeTelefono}</h4>
-    `
+    outputElement.innerHTML = `
+    <h1>Your name is: ${ObjName}</h1>
+    <h2>Your last name is: ${ObjLastName}</h2>
+    <h4>Remember your phone number: ${ObjPhone}</h4>
+    `;
 }
-
