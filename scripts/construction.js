@@ -17,7 +17,6 @@ today.forEach(element => {
 });
 
 today.splice(0, today.length);
-
 if (today.length === 0) {
     console.log("Delete Correctly");
     console.log("The Information in the array today is: " , today.length)
@@ -33,7 +32,7 @@ function Task(name, description, status) {
 }
 
 const Task_One = new Task("Read" , "Read about Marco Antonio Solis", true );
-const Task_Two = new Task("Art" , "Kill i Andres Gonzales Pineda", false );
+const Task_Two = new Task("Art" , "Kill i Andres Gonzales Pined", false );
 
 let taskList = [];
 taskList.push(Task_One, Task_Two);
@@ -92,22 +91,26 @@ function addContact(NewName, NewPhoneNumber, NewEmail) {
     console.log("------New Contact recent--------");
     printContactList();
 }
-
-function findContact(parameterUser) {
-    let state = false;
-    contactList.forEach(UserVerification => {
-        if (UserVerification.NameUser === parameterUser) {
-            state = true;
-            console.log("User Enter or True")
-            console.log(`User: ${UserVerification.NameUser} , Number: ${UserVerification.NumberPhoneUser} , Email: ${UserVerification.EmailUser}`)
-        }
-
-        if (!state) {
-            console.log("False");
-        }
-
-    });
+try {
+    function findContact(parameterUser) {
+        let state = false;
+        contactList.forEach(UserVerification => {
+            if (UserVerification.NameUser === parameterUser) {
+                state = true;
+                console.log("User Enter or True")
+                console.log(`User: ${UserVerification.NameUser} , Number: ${UserVerification.NumberPhoneUser} , Email: ${UserVerification.EmailUser}`)
+            }
+    
+            if (!state) {
+                console.log("False");
+            }
+    
+        });
+    }
+} catch (error) {
+    console.log("Error en findContact " , error)
 }
+
 // Add contact to contact list
 addContact("Giber", "5456454565", "Sebas@gmail.com");
 

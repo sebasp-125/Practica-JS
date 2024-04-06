@@ -8,13 +8,13 @@ function captureValues() {
 
     let outputElement = document.getElementById("output");
     let storage = {
-        ObjName : name, 
-        ObjLastName : lastName,
-        ObjPhone : phone
+        ObjName: name,
+        ObjLastName: lastName,
+        ObjPhone: phone
     };
 
     console.log(storage.ObjName);
-    let {ObjName , ObjLastName , ObjPhone} = storage;
+    let { ObjName, ObjLastName, ObjPhone } = storage;
 
     if (ObjName == '' || ObjLastName == '' || ObjPhone == '') {
         alert("You must fill in all fields. Please try again.");
