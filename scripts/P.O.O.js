@@ -14,7 +14,7 @@ const UserHandler = {
     loginUser: function(nombre, password) {
         const userFound = this.users.some(user => user.nombre === nombre && user.password === password);
         if (userFound) {
-            alert("Usuario registrado");
+            alert("User register");
         } else {
             alert("Usuario no registrado");
         }
